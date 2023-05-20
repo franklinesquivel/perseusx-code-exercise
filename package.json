@@ -5,8 +5,8 @@
   "author": "Franklin Esquivel <franklin.esquivel@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && tsc-alias",
-    "build:watch": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+    "build": "tsc -p tsconfig.build.json && tsc-alias",
+    "build:watch": "tsc -p tsconfig.build.json && (concurrently \"tsc -p tsconfig.build.json -w\" \"tsc-alias -w\")",
     "start": "node ./build/index.js",
     "test": "jest"
   },

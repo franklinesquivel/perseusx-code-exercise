@@ -16,10 +16,11 @@
         "target": "ES2017"
     },
     "include": [
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "jest.config.ts"
     ],
     "exclude": [
         "node_modules",
-        "src/**/*.test.ts"
+        "build"
     ]
 }
