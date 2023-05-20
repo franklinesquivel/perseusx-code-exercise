@@ -1,4 +1,4 @@
-import { USER_STATUS } from '@/constants/index';
+import { USER_STATUS } from '@/constants';
 import { UserType }    from '@/types';
 
 
