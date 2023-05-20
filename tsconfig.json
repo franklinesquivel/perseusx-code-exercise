@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "CommonJS",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "outDir": "build",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "sourceMap": false,
+        "strict": true,
+        "target": "ES2017"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
