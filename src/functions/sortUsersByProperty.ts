@@ -6,7 +6,7 @@ type OrderType = 'ASC' | 'DESC';
 export const sortUsersByProperty = (users: UserType[], prop: keyof UserType, order: OrderType = 'DESC') => {
     const orderN = order === 'DESC' ? -1 : 1;
 
-    return users.sort((a, b) => {
+    return [...users].sort((a, b) => {
         const propA = a[prop];
         const propB = b[prop];
 
