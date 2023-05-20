@@ -103,33 +103,33 @@ describe('sortUsersByProperty_function', () => {
         expect(sortedUsers[0].name).toBe('John');
     });
 
-    // Tests that the function sorts an array of users by current timestamp by descending order. Tags: [happy path]
-    it('test_sort_users_by_timestamps', () => {
+    // Tests that the function sorts an array of users by current date by descending order. Tags: [happy path]
+    it('test_sort_users_by_dates', () => {
         const users = [
             {
                 name:          'John',
                 favoriteFood:  'Pizza',
                 favoriteMovie: 'The Godfather',
                 status:        USER_STATUS.active,
-                timestamp:     1631230800000 // September 10, 2021 12:00:00 AM UTC
+                date:          '10/09/2021'
             },
             {
                 name:          'Jane',
                 favoriteFood:  'Sushi',
                 favoriteMovie: 'The Shawshank Redemption',
                 status:        USER_STATUS.inactive,
-                timestamp:     1631317200000 // September 11, 2021 12:00:00 AM UTC
+                date:          '11/09/2021'
             },
             {
                 name:          'Bob',
                 favoriteFood:  'Burgers',
                 favoriteMovie: 'The Dark Knight',
                 status:        USER_STATUS.active,
-                timestamp:     1631403600000 // September 12, 2021 12:00:00 AM UTC
+                date:          '12/09/2021'
             }
         ];
 
-        const sortedUsers = sortUsersByProperty(users, 'timestamp');
+        const sortedUsers = sortUsersByProperty(users, 'date');
 
         expect(sortedUsers).toEqual([
             {
@@ -137,21 +137,21 @@ describe('sortUsersByProperty_function', () => {
                 favoriteFood:  'Burgers',
                 favoriteMovie: 'The Dark Knight',
                 status:        USER_STATUS.active,
-                timestamp:     1631403600000 // September 12, 2021 12:00:00 AM UTC
+                date: '12/09/2021'
             },
             {
                 name:          'Jane',
                 favoriteFood:  'Sushi',
                 favoriteMovie: 'The Shawshank Redemption',
                 status:        USER_STATUS.inactive,
-                timestamp:     1631317200000 // September 11, 2021 12:00:00 AM UTC
+                date: '11/09/2021'
             },
             {
                 name:          'John',
                 favoriteFood:  'Pizza',
                 favoriteMovie: 'The Godfather',
                 status:        USER_STATUS.active,
-                timestamp:     1631230800000 // September 10, 2021 12:00:00 AM UTC
+                date: '10/09/2021'
             }
         ]);
     });

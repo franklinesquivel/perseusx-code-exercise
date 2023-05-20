@@ -6,5 +6,5 @@ export type UserType = {
     favoriteFood: string;
     favoriteMovie: string;
     status: StatusType;
-    timestamp?: number
+    date?: string
 }

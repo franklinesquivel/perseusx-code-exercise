@@ -4,11 +4,11 @@
  * Purpose of the script: Technical test for PerseusX
  */
 
-import { USER_STATUS }                                              from '@/constants';
-import { usersCollection }                                          from '@/data';
-import { addTimestampToUsers, getActiveUsers, sortUsersByProperty } from '@/functions';
-import { UserType }                                                 from '@/types';
-import { exit }                                                     from 'process';
+import { USER_STATUS }                                         from '@/constants';
+import { usersCollection }                                     from '@/data';
+import { addDateToUsers, getActiveUsers, sortUsersByProperty } from '@/functions';
+import { UserType }                                            from '@/types';
+import { exit }                                                from 'process';
 
 
 const franklin: UserType = {
@@ -18,8 +18,8 @@ const franklin: UserType = {
     status:        USER_STATUS.active
 };
 
-const usersWithTimestamp = addTimestampToUsers([...usersCollection, franklin]);
-const activeUsers = getActiveUsers(usersWithTimestamp);
+const usersWithDates = addDateToUsers([...usersCollection, franklin]);
+const activeUsers = getActiveUsers(usersWithDates);
 
 if (activeUsers.length === 0) {
     console.error('There are no active users!');
@@ -28,6 +28,6 @@ if (activeUsers.length === 0) {
 
 const sortedUsersByMovie = sortUsersByProperty(activeUsers, 'favoriteMovie');
 
-sortedUsersByMovie.forEach(({ name, timestamp, favoriteMovie }) => console.log({
-    name, timestamp, favoriteMovie
+sortedUsersByMovie.forEach(({ name, date, favoriteMovie }) => console.log({
+    name, date, favoriteMovie
 }));
