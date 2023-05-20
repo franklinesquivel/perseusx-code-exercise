@@ -1,3 +1,9 @@
+/**
+ * Name: Franklin Armando Esquivel Guevara
+ * Date of Development: 20-05-2023
+ * Purpose of the script: Technical test for PerseusX
+ */
+
 import { USER_STATUS }                                              from '@/constants';
 import { usersCollection }                                          from '@/data';
 import { addTimestampToUsers, getActiveUsers, sortUsersByProperty } from '@/functions';
