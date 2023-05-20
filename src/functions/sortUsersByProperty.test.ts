@@ -156,4 +156,40 @@ describe('sortUsersByProperty_function', () => {
         ]);
     });
 
+    // Tests that the function does not modify the original array. Tags: [happy path]
+    it('test_sort_does_not_modify_original_array', () => {
+        const users: UserType[] = [
+            {
+                name:          'John',
+                favoriteFood:  'Pizza',
+                favoriteMovie: 'The Godfather',
+                status:        USER_STATUS.active
+            },
+            {
+                name:          'Jane',
+                favoriteFood:  'Sushi',
+                favoriteMovie: 'The Shawshank Redemption',
+                status:        USER_STATUS.inactive
+            }
+        ];
+
+        const sortedUsers = sortUsersByProperty(users, 'name', 'ASC');
+
+        expect(sortedUsers).not.toStrictEqual(users);
+        expect(sortedUsers).toEqual([
+            {
+                name:          'Jane',
+                favoriteFood:  'Sushi',
+                favoriteMovie: 'The Shawshank Redemption',
+                status:        USER_STATUS.inactive
+            },
+            {
+                name:          'John',
+                favoriteFood:  'Pizza',
+                favoriteMovie: 'The Godfather',
+                status:        USER_STATUS.active
+            }
+        ]);
+    });
+
 });
